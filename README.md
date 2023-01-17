@@ -7,9 +7,6 @@ Link para visualização disponível em https://organoarc.vercel.app/
 A aplicação consiste em cadastrar usuários, separando por setor, nome e foto do responsável.
 Ao ser cadastrado, um "card" é criado com as informações, separando os usuários cadastrados por setor.
 
-![Main Interface](https://i.imgur.com/xfSIgC0.png)
-![Card Interface](https://i.imgur.com/MBZJqqy.png)
-
 #Diferente do apresentado na aula, neste projeto foi utilizado o ViteJs
 
 #Aprendizados:
@@ -19,3 +16,6 @@ Ao ser cadastrado, um "card" é criado com as informações, separando os usuár
   - useEffect
 - Props
 - Criação de Componentes
+
+(https://i.imgur.com/xfSIgC0.png)
+(https://i.imgur.com/MBZJqqy.png)
