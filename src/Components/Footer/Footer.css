@@ -1,0 +1,32 @@
+
+
+.pos {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    line-height: 82px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding: 6px 0;
+}
+
+.pos .tela {
+    position: static;
+}
+.pos .copyright,
+.pos img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.pos img {
+    height: 43px;
+    margin-left: 0;
+}
+
+.pos .copyright {
+    display: flexbox;
+    padding-bottom: 5px;
+}
