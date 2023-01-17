@@ -1,6 +1,6 @@
 ## Organo ARC
 
-App desenvolvido sob instrução do curso "React: desenvolvendo com JavaScript", na Alura, sob tutela do professor Vinicios Neves.
+App desenvolvido durante o curso "React: desenvolvendo com JavaScript", na Alura, sob tutela do professor Vinicios Neves.
 
 Link para visualização disponível em https://organoarc.vercel.app/
 
@@ -16,6 +16,8 @@ Ao ser cadastrado, um "card" é criado com as informações, separando os usuár
   - useEffect
 - Props
 - Criação de Componentes
+- Analisar os comandos disponíveis no package.json
+- Manipular arrays utilizando .map e .filter
 
 ## Imagens do Projeto
 ![Main Interface](https://i.imgur.com/xfSIgC0.png)
