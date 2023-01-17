@@ -26,9 +26,9 @@ const Form = (props) => {
         <section className='form'>
             <form onSubmit={onSubmit}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-                <CampoTexto obrigatorio={true} valor={nome} label='Nome' placeholder="Digite seu nome" aoAlterado={valor => setNome(valor)}/>
-                <CampoTexto obrigatorio={true} valor={imagem} label='Imagem' placeholder="Digite o endereço da imagem" aoAlterado={valor => setImagem(valor)}/>
-                <ListaSuspensa obrigatorio={true} valor={cargo} itens={props.setor} label='Cargo' aoAlterado={valor => setCargo(valor)}/>
+                <CampoTexto obrigatorio={true} valor={nome} label='Nome' placeholder="Digite seu nome" aoAlterado={valor => setNome(valor)} />
+                <CampoTexto obrigatorio={true} valor={imagem} label='Imagem' placeholder="Digite o endereço da imagem" aoAlterado={valor => setImagem(valor)} />
+                <ListaSuspensa obrigatorio={true} valor={cargo} itens={props.setor} label='Cargo' aoAlterado={valor => setCargo(valor)} />
                 <Botao>
                     Cadastrar
                 </Botao>

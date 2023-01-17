@@ -48,8 +48,8 @@ function App() {
           cor1={item.corPrimaria}
           cor2={item.corSecundaria}
           colaboradores={colaboradores.filter(colaborador => colaborador.cargo == item.nome)}
-          />
-          )}
+        />
+      )}
 
     </div>
   )
