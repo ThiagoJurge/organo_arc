@@ -7,7 +7,7 @@ Link para visualização disponível em https://organoarc.vercel.app/
 A aplicação consiste em cadastrar usuários, separando por setor, nome e foto do responsável.
 Ao ser cadastrado, um "card" é criado com as informações, separando os usuários cadastrados por setor.
 
-#Diferente do apresentado na aula, neste projeto foi utilizado o [ViteJs](https://imgur.com/a/6dBmkcK)
+#Diferente do apresentado na aula, neste projeto foi utilizado o <a href="https://vitejs.dev/guide/" target="_blank">ViteJs</a>
 
 #Aprendizados:
 - Conceitos acerca do ReactJs
