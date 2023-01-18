@@ -3,55 +3,120 @@ import Banner from './Components/Banner'
 import Footer from './Components/Footer'
 import Form from './Components/Form'
 import Team from './Components/Team'
+import { v4 as uuidv4 } from 'uuid'
 
 function App() {
-  const [colaboradores, setColaboradores] = useState([])
 
-  const setor = [
+  const [setor, setSetor] = useState([
     {
+      id: uuidv4(),
       nome: 'Engenharia',
-      corPrimaria: '#57C278',
-      corSecundaria: '#D9F7E9'
+      cor: '#57C278',
     },
 
     {
+      id: uuidv4(),
       nome: 'NOC Nível 1',
-      corPrimaria: '#82CFFA',
-      corSecundaria: '#E8F8FF'
+      cor: '#82CFFA',
     },
 
     {
+      id: uuidv4(),
       nome: 'NOC Nível 2',
-      corPrimaria: '#A6D157',
-      corSecundaria: '#F0F8E2'
+      cor: '#A6D157',
     },
 
     {
+      id: uuidv4(),
       nome: 'NOC Nível 3',
-      corPrimaria: '#E06B69',
-      corSecundaria: '#FDE7E8'
+      cor: '#E06B69',
     }
-  ]
+  ])
+
+  const [colaboradores, setColaboradores] = useState([
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: "1",
+      imagem: "1",
+      cargo: "Engenharia"
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: "2",
+      imagem: "2",
+      cargo: "NOC Nível 1"
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: "3",
+      imagem: "3",
+      cargo: "NOC Nível 2"
+    },
+    {
+      id: uuidv4(),
+      favorito: false,
+      nome: "4",
+      imagem: "4",
+      cargo: "NOC Nível 3"
+    }
+  ])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     setColaboradores([...colaboradores, colaborador])
     console.log(colaborador)
   }
+
+  function deletarColaborador(id) {
+    console.log(id)
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id));
+  }
+
+  function mudarCordoSetor(cor, id) {
+    setSetor(setor.map((setor) => {
+      if (setor.id === id) {
+        setor.cor = cor
+      }
+      return setor
+    }))
+  }
+
+  function cadastrarTime(novoTime) {
+    setSetor([...setor, { ...novoTime, id: uuidv4() }])
+  }
+
+  function resolverFavorito(id) {
+    setColaboradores(colaboradores.map(colaborador => {
+      if(colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador;
+    }))
+  }
+
   return (
     <div>
       <Banner />
-      <Form aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} setor={setor.map(item => item.nome)} />
+      <Form
+        cadastrarTime={cadastrarTime}
+        aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}
+        setor={setor.map(item => item.nome)}
+      />
 
       {setor.map((item, key) =>
         <Team
+        aoFavoritar={resolverFavorito}
+          favorito={colaboradores.filter(colaborador=>colaborador.favorito)}
+          mudarCor={mudarCordoSetor}
           key={key}
           setor={item.nome}
-          cor1={item.corPrimaria}
-          cor2={item.corSecundaria}
+          id={item.id}
+          cor={item.cor}
           colaboradores={colaboradores.filter(colaborador => colaborador.cargo == item.nome)}
+          aoDeletar={deletarColaborador}
         />
       )}
-      <Footer/>
+      <Footer />
     </div>
   )
 }
